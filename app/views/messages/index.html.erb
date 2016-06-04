@@ -1,0 +1,9 @@
+<h1>Welcome to Rap Forum</h1>
+
+<% @messages.each do |msg| %>
+
+  <%= link_to msg.title, msg %>
+
+<% end %>
+
+<%= link_to "New Message", new_message_path %> 
