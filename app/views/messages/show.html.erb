@@ -1,3 +1,9 @@
 <h1><%= @message.title %></h1>
 
-<%= @message.description %> 
+<div id="subtitles">
+  <h5><%= time_ago_in_words(@message.created_at) %> ago | <%= link_to "Edit", edit_message_path(@message) %> | <%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?" } %></h5>
+</div>
+
+<p><%= @message.description %></p>
+
+<%= link_to "Back", root_path, class: "btn btn-primary" %> 

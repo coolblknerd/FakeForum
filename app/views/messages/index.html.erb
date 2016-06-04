@@ -2,8 +2,17 @@
 
 <% @messages.each do |msg| %>
 
-  <%= link_to msg.title, msg %>
+<%= link_to msg do %>
+<div id="message-box">
+
+  <h2><%= msg.title %></h2>
+  <h5><%= time_ago_in_words(msg.created_at) %> ago... </h5>
+  <p><%= truncate(msg.description, length: 50) %></p>
+
+</div>
 
 <% end %>
 
-<%= link_to "New Message", new_message_path %> 
+<% end %>
+
+<%= link_to "New Message", new_message_path, class: "btn btn-primary" %>
