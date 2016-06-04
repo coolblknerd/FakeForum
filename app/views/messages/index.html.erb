@@ -1,15 +1,11 @@
-<h1>Welcome to Rap Forum</h1>
-
 <% @messages.each do |msg| %>
 
 <div id="message-box">
 
   <h2><%= msg.title %></h2>
   <h5><%= time_ago_in_words(msg.created_at) %> ago... </h5>
-  <p><%= truncate(msg.description, length: 50) %></p>
+  <p><%= truncate(msg.description, length: 100) %></p>
   <h4><%= link_to "Join Convo", message_path(msg) %></h4>
 </div>
 
 <% end %>
-
-<%= link_to "New Message", new_message_path, class: "btn btn-primary" %>
